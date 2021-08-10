@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La liga - Resultados</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="contenedor__loader" id="contenedor__loader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="titulo" href="index.html">LaLiga</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="index.html"
+                >Inicio</a
+              >
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  LaLiga Santander
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item active" href="partidos.html"
+                      >Resultados</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="clasificacion.html"
+                      >Clasificación</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <a class="nav-link" href="/noticias.html">Noticias</a>
+              <a href="index.html">
+                <img class="logo" src="/img/logo.png" alt="logo" />
+              </a>
+              <a class="nav-link" href="videos.html">Vídeos</a>
+              <a class="nav-link" href="fotogalerias.html">Fotogalerías</a>
+              <a class="nav-link" href="estadisticas.html">Estadisticas</a>
+            </div>
+          </div>
+          <div class="sm__contenedor">
+            <a class="float-right sm" href="#">
+              <img src="/img/youtube.svg" width="30px" height="30px" alt="" />
+            </a>
+            <a class="float-right sm" href="#">
+              <img src="/img/twitter.svg" width="30px" height="30px" alt="" />
+            </a>
+            <a class="float-right sm" href="#">
+              <img
+                class="gris"
+                src="/img/instagram.svg"
+                width="30px"
+                height="30px"
+                alt=""
+              />
+            </a>
+            <a class="float-right sm" href="https://github.com/shady2310" target="_blank">
+              <img
+                class="gris"
+                src="/icons/github3.gif"
+                width="30px"
+                height="30px"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <div>
+        <div class="filtros__partidos">
+          <h4>Filtros:</h4>
+          <input
+            type="text"
+            name=""
+            id="busqueda"
+            placeholder="Buscar equipo"
+            class="busqueda"
+          />
+          <h4>Jornada:</h4>
+          <input type="number" name="" id="jornada" min="1" max="38" placeholder="1-38">
+          <input type="button" value="Buscar" id="buscaJornada">
+          <input type="button" value="Mostrar todas las jornadas" id="todasJornadas">
+          <div class="alert alert-danger" id="errorJornada" style="display: none">
+            No puedes buscar una jornada sin poner un número antes &#128556, prueba añadiendo un número de jornada o muestra todas las jornadas &#128540;
+          </div>
+        </div>
+        <div class="alert alert-danger" id="noExiste" style="display: none">
+          Este equipo no existe, ponte seri@ anda... &#128517
+        </div>
+        <div class="tablas__scroll table-responsive">
+          <table
+            class="table table-sm align-middle partidos"
+            id="tabla_partidos"
+          >
+            <thead class="table-light">
+              <tr>
+                <th>Jornada</th>
+                <th>
+                  <img
+                    src="/icons/calendario.gif"
+                    height="18"
+                    width="18"
+                  />Fecha
+                </th>
+                <th>
+                  <img src="/icons/reloj.gif" height="18" width="18" />Hora
+                </th>
+                <!-- <th>Equipo Local</th>
+                      <th>Equipo Visitante</th> -->
+                <th colspan="5">
+                  <img
+                    src="/icons/partidos.gif"
+                    height="18"
+                    width="18"
+                  />Partidos
+                </th>
+                <th>
+                  <img src="/icons/tarjeta-roja.png" height="18" width="18" />
+                  Árbitro
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tbody__partidos"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/loader.js"></script>
+    <script src="/js/partidos.js"></script>
+  </body>
+</html>
