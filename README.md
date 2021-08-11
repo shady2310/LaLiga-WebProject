@@ -202,7 +202,9 @@ function dosdigitos(time) {
 
 ### Obtención de datos:
 
-Para obtener los datos en tiempo real hacemos uso de una **API**.
+Para obtener los datos en tiempo real hacemos uso de una **API**. 
+
+En cada tabla usamos el **Fetch** para la obtención de los datos.
 
 Documentación de la **API** utilizada: [Documentación](https://www.football-data.org/documentation/quickstart).
 
@@ -262,6 +264,108 @@ Aquí tenemos la posibilidad de filtrar por el nombre de cada equipo y por las j
 <div align="center">
   <img src="ReadMe\filtros-partidos.png" height="47">
 </div>
+
+- Filtrado por nombre:
+
+  ```js
+  // Para actualizar la búsqueda utilizamos previamente un "addEventListener" con "keyup" para que se ejecute cada vez que introducimos un caracter
+
+  function busqueda(partidos) {
+    // En caso de que no introduzcamos ningún nombre nos volverá a generar la tabla principal
+    if (inputBusqueda.value == "") {
+      tablaPartidos(partidos);
+    }
+    // Filtramos los equipos por su nombre con ".filter" y hacemos uso de ".toLowerCase()" para que busque el nombre aunque se introduzcan mayusculas o minusculas en el input
+    let datosFiltrados = partidos.filter((nombres) => {
+      return (
+        nombres.homeTeam.name
+          .toLowerCase()
+          .includes(inputBusqueda.value.toLowerCase()) ||
+        nombres.awayTeam.name
+          .toLowerCase()
+          .includes(inputBusqueda.value.toLowerCase())
+      );
+    });
+
+    // Hacemos uso de alertas para indicar al usuario cuando no está haciendo la búsqueda correctamente
+    if (datosFiltrados.length == 0) {
+      document.getElementById("noExiste").style.display = "block";
+    } else if (datosFiltrados.length != 0) {
+      document.getElementById("noExiste").style.display = "none";
+    }
+
+    // Aquí enviamos los datos filtrados a la función que crea nuestra tabla
+    tablaPartidos(datosFiltrados);
+  }
+  ```
+
+- Filtro por jornada:
+
+  ```js
+  // Para filtrar por jornada utilizamos un input de tipo number y le añardimos un botón para buscar con un "addEventListener" y un "click" para ejecutar la función
+
+  function jornadas(partidos, jornadaSeleccionada) {
+    let partidosSeleccionados = partidos.filter((partido) => {
+      return partido.matchday === jornadaSeleccionada; // Se encarga de comparar el número introducido en el input con la jornada del partido
+    });
+    tablaPartidos(partidosSeleccionados);
+  }
+
+  // Hacemos también uso de alertas para indicar al usuario el correcto uso del botón buscar en caso de que no haya introducido ningún dato (Esto se ejecuta en otra parte del código)
+
+  buscaJornada.addEventListener("click", function () {
+  jornadas(data.matches, parseInt(selectorJornadas.value));
+  if (selectorJornadas.value == "") {
+    document.getElementById("errorJornada").style.display = "block";
+  } else if (selectorJornadas.value != "") {
+    document.getElementById("errorJornada").style.display = "none";
+  }
+  ```
+
+<br>
+
+#### Filtros de la tabla de estadisticas:
+
+En está tabla por defecto tenemos listados todos los equipos (20), podemos listar gracias a unos botones los primeros 5 equipos (los 5 equipos con mejores estadisticas) y contamos con otro botón para volver a listar los 20 equipos para que no sea necesario recargar la página.
+
+<div align="center">
+  <img src="ReadMe\filtros-estadisticas.png" height="47">
+</div>
+
+- Top 20:
+
+  ```js
+  // Vuelve a ejecutar la creación de la tabla con sus datos
+  let botonTop20 = document.getElementById("top20");
+
+  botonTop20.addEventListener("click", function () {
+    crearTablaEstadisticas(datosEstadisticas);
+  });
+  ```
+
+- Top 5:
+
+  ```js
+  //Hacemos uso del "slice(0, 5)" para mostrar solo los primeros 5 equipos de nuestro Array
+  function top5() {
+    let top5 = datosEstadisticas.slice(0, 5);
+    crearTablaEstadisticas(top5);
+  }
+
+  // Hacemos la búsqueda del botón el DOM y usamos el "addEventListener" y el "click" para esperar la interacción del usuario
+  let botonTop5 = document.getElementById("top5");
+  botonTop5.addEventListener("click", function () {
+    top5(datosEstadisticas);
+  });
+  ```
+
+<br>
+
+### Creación de las tablas con los datos
+
+1. Creamos los elementos del **HTML** de manera dinamica con **JavaScript**.
+2. Posteriormente asigamos los datos obtenidos a las varibles que que luego utilizaremos para crear bucles con **".forEach()"**.
+3. Por último hacemos una conexión con los "elementos padres" y usamos **".appendChild()"** para la creación del **HTML**.
 
 ---
 
