@@ -1,5 +1,4 @@
 <!-- LOGO -->
-<br />
 <p align="center">
   <a href="https://github.com/shady2310/LaLiga-WebProject">
     <img src="ReadMe\logo.png" alt="Logo" width="80" height="80">
@@ -80,13 +79,25 @@ Y otrás cosas más que se explican más adelante.
 ***
 <!-- Descripción funcional -->
 ## Descripción funcional
+<h3 align="center">
+<strong>Características principales</strong>
+</h3>
 
-**Características principales:**
+**Página principal**
 
-Cuando entras por primera vez a la web te encuentras con la página de bienvenida, en la cual en caso de que LaLiga no haya comenzado te mostrará un contador para el inicio de la misma, en caso contrario (LaLiga ya ha empezado) el contador desaparecerá automaticamente.
-
+Cuando entras por primera vez a la web te encuentras con la página de bienvenida, en la cual en caso de que LaLiga no haya comenzado te mostrará un contador para el inicio de la misma, en caso contrario el contador desaparecerá automaticamente.
+<div align="center">
 <img src="ReadMe\index.png" height="250">
+</div>
 
+
+**LaLiga Santander**
+
+Aquí podemos encontrar toda la información sobre los partidos y la clasificación de cada uno de los equipos en la competición.
+<div align="center">
+<img src="ReadMe\partidos.png" height="250">
+<img src="ReadMe\clasificacion.png" height="250">
+</div>
 
 
 ***
