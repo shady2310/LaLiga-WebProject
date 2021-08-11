@@ -21,7 +21,7 @@
   </p>
 </p>
 
-
+***
 
 <!-- CONTENIDO -->
 <details open="open">
@@ -51,7 +51,7 @@
 </details>
 
 
-
+***
 <!-- Sobre el proyecto -->
 ## Sobre el proyecto
 
@@ -70,15 +70,25 @@ Y otrás cosas más que se explican más adelante.
 ### Built With
 
 * <img src="ReadMe\html.ico" width="18" height="18"> HTML
-* <img src="" width="" height="">
-* <img src="" width="" height="">
+* <img src="ReadMe\html.ico" width="18" height="18"> CSS
+* <img src="ReadMe\html.ico" width="18" height="18"> JavaScript
 
 ### Otras tecnologías
-* <img src="" width="" height="">
-* <img src="" width="" height="">
-* <img src="" width="" height="">
+* <img src="ReadMe\html.ico" width="18" height="18"> Git
+* <img src="ReadMe\html.ico" width="18" height="18"> GitHub
+
+***
+<!-- Descripción funcional -->
+## Descripción funcional
+
+**Características principales:**
+Cuando entras por primera vez a la web te encuentras con la página de bienvenida, en la cual en caso de que LaLiga no haya comenzado te mostrará un contador para el inicio de la misma, en caso contrario (LaLiga ya ha empezado) el contador desaparecerá automaticamente.
+
+<img src="ReadMe\index.png" height="">
 
 
+
+***
 <!-- Descripcion funcional -->
 ## Descripción técnica
 
@@ -104,16 +114,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 
 
-
-<!-- Descripción funcional -->
-## Descripción funcional
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
+***
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -139,18 +140,3 @@ Contributions are what make the open source community such an amazing place to b
 * []()
 * []()
 * []()
-
-
-
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
