@@ -185,9 +185,10 @@ function cuentaAtras() {
   minutosEL.innerHTML = dosdigitos(minutos);
   segundosEL.innerHTML = dosdigitos(segundos);
 
+  // Aquí ocultamos el contador cuando a alcanzado la fecha establecida
   if (fechaInicio <= fechaActual) {
     console.log(`La Liga ya ha empezado!`);
-    clearInterval(intervalo);
+    clearInterval(intervalo); // Detenemos el intervalo de ejecución de la función para evitar un loop infinito
     ocultarContador.style.display = "none";
   }
 }
@@ -211,7 +212,7 @@ Para comunicarnos con la **API** utilizamos un fetch dentro de una función asyn
 
   ```js
   async function datos() {
-    const url = "https://api.football-data.org/v2/competitions/2014/matches";
+    const url = "https://api.football-data.org/v2/competitions/2014/matches"; // Url de la API
     const token = "XXXXX"; // Token privado proporcionado por la API
     const header = {
       method: "GET", // Utilizamos el método GET para la obtección de los datos
@@ -249,6 +250,18 @@ Al recibir los datos mediante el fetch debido a que hacemos una llamada a una AP
   <div align="center">
   <img src="ReadMe\spinner.png" height="250">
   </div>
+
+### Filtros
+
+Contamos con diferentes filtros, en la tabla de resultados y en la tabla de estadisticas.
+
+#### Filtros de la tabla resultados:
+
+Aquí tenemos la posibilidad de filtrar por el nombre de cada equipo y por las jornadas de juego.
+
+<div align="center">
+  <img src="ReadMe\filtros-partidos.png" height="47">
+</div>
 
 ---
 

@@ -25,9 +25,9 @@ function cuentaAtras() {
   // console.log (dias, horas, minutos, segundos);
 
   if (fechaInicio <= fechaActual) {
-    console.log(`La Liga ya ha empezado!`);
     clearInterval(intervalo);
     ocultarContador.style.display = "none";
+    console.log(`La Liga ya ha empezado!`);
   }
 }
 
