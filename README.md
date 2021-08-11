@@ -93,7 +93,9 @@ Cuando entras por primera vez a la web te encuentras con la página de bienvenid
 
 **LaLiga Santander**
 
-Aquí podemos encontrar toda la información sobre los partidos y la clasificación de cada uno de los equipos en la competición.
+**Partidos y clasificación:**
+
+Aquí podemos encontrar toda la información sobre los partidos y la clasificación de cada uno de los equipos en la competición. Además encontraremos varios filtros que nos permiten hacer una busqueda más precisa y comoda del equipo que más nos interese.
 <div align="center">
 <img src="ReadMe\partidos.png" height="190">
 <img src="ReadMe\clasificacion.png" height="190">
