@@ -22,7 +22,6 @@ function cuentaAtras() {
   horasEL.innerHTML = dosdigitos(horas);
   minutosEL.innerHTML = dosdigitos(minutos);
   segundosEL.innerHTML = dosdigitos(segundos);
-  // console.log (dias, horas, minutos, segundos);
 
   if (fechaInicio <= fechaActual) {
     clearInterval(intervalo);
