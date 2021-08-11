@@ -417,7 +417,7 @@ En está tabla por defecto tenemos listados todos los equipos (20), podemos list
 Respecto al diseño se realizó una aproximación del diseño deseado. El diseño final es un poco diferente debido a las modificaciones y requisitos posteriores que se le asignaron al proyecto:
 
 <div align="center">
-<img src="ReadMe/wireframes/inicio.png" height="190">
+<img src="ReadMe\wireframes/inicio.png" height="190">
 <img src="ReadMe/wireframes/partidos.png" height="190">
 </div>
 
