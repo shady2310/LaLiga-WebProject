@@ -20,7 +20,7 @@
   </p>
 </p>
 
-***
+---
 
 <!-- CONTENIDO -->
 <details open="open">
@@ -49,13 +49,11 @@
   </ol>
 </details>
 
+---
 
-***
 <!-- Sobre el proyecto -->
+
 ## Sobre el proyecto
-
-
-
 
 **Descripción del proyecto:**
 
@@ -65,20 +63,23 @@ A su vez, como extra, se diseñaron más apartados en la web con diferentes func
 
 Y otrás cosas más que se explican más adelante.
 
-
 ### Built With
 
-* <img src="ReadMe\html.ico" width="18" height="18"> HTML
-* <img src="ReadMe\html.ico" width="18" height="18"> CSS
-* <img src="ReadMe\html.ico" width="18" height="18"> JavaScript
+- <img src="ReadMe\html.ico" width="18" height="18"> HTML
+- <img src="ReadMe\html.ico" width="18" height="18"> CSS
+- <img src="ReadMe\html.ico" width="18" height="18"> JavaScript
 
 ### Otras tecnologías
-* <img src="ReadMe\html.ico" width="18" height="18"> Git
-* <img src="ReadMe\html.ico" width="18" height="18"> GitHub
 
-***
+- <img src="ReadMe\html.ico" width="18" height="18"> Git
+- <img src="ReadMe\html.ico" width="18" height="18"> GitHub
+
+---
+
 <!-- Descripción funcional -->
+
 ## Descripción funcional
+
 <h3 align="center">
 <strong>Características principales</strong>
 </h3>
@@ -86,34 +87,94 @@ Y otrás cosas más que se explican más adelante.
 **Página principal**
 
 Cuando entras por primera vez a la web te encuentras con la página de bienvenida, en la cual en caso de que LaLiga no haya comenzado te mostrará un contador para el inicio de la misma, en caso contrario el contador desaparecerá automaticamente.
+
 <div align="center">
 <img src="ReadMe\index.png" height="250">
 </div>
 
+<br>
 
-**LaLiga Santander**
+<div align="center">
+<h4><strong>LaLiga Santander</strong></h4>
+</div>
 
 **Partidos y clasificación:**
 
 Aquí podemos encontrar toda la información sobre los partidos y la clasificación de cada uno de los equipos en la competición. Además encontraremos varios filtros que nos permiten hacer una busqueda más precisa y comoda del equipo que más nos interese.
+
 <div align="center">
 <img src="ReadMe\partidos.png" height="190">
 <img src="ReadMe\clasificacion.png" height="190">
 </div>
 
+<br>
 
-***
-<!-- Descripcion funcional -->
+**Noticias:**
+
+Esta sección se encuentra aún en desarrollo.
+
+<br>
+
+**Vídeos:**
+
+Aquí podemos encontrar una diferente variedad de vídeos relacionados con la competición.
+
+<div align="center">
+<img src="ReadMe\videos.png" height="250">
+</div>
+
+<br>
+
+**Fotogalerías:**
+
+Aquí encontramos diferentes galerías publicadas por temas, dentro de cada una podemos encontrar un carrusel con las imagenes descritas en cada uno de los titulos.
+
+<div align="center">
+<img src="ReadMe\fotogaleria.png" height="190">
+<img src="ReadMe\fotogaleria2.png" height="190">
+</div>
+
+<br>
+
+**Estadisticas:**
+
+Por último tenemos la tabla de estadisticas, en ella podemos encontrar listados los 20 equipos que participan en LaLiga Santander. Además contamos con información relevante al rendimiento de los equipos en la tabla.
+
+<div align="center">
+<img src="ReadMe\estadisticas.png" height="250">
+</div>
+
+<br>
+
+---
+
+<!-- Descripcion técnica -->
+
 ## Descripción técnica
 
-To get a local copy up and running follow these simple steps.
+### Obtención de datos:
 
-### Prerequisites
+Para obtener los datos en tiempo real hacemos uso de una **API**.
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
+Documentación de la **API** utilizada: [Documentación](https://www.football-data.org/documentation/quickstart).
+
+Para comunicarnos con la **API** utilizamos un fetch dentro de una función async (asíncrona).
+
+- Fetch
+  ```js
+  async function datos() {
+    const url = "https://api.football-data.org/v2/competitions/2014/matches";
+    const token = "XXXXX"; // Token privado proporcionado por la API
+    const header = {
+      method: "GET",
+      headers: {
+        "X-Auth-Token": token,
+      },
+    };
+    const response = await fetch(url, header);
+    const data = await response.json();
+    FuncionEjemplo(data); // Aquí ejecutamos cada una de las funciones que utilizamos en el código.
+  }
   ```
 
 ### Installation
@@ -127,16 +188,16 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 
+---
 
-***
 <!-- ROADMAP -->
+
 ## Roadmap
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -147,10 +208,10 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
 <!-- Versiones -->
+
 ## Versiones
 
-* []()
-* []()
-* []()
+- []()
+- []()
+- []()
