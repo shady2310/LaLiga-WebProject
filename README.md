@@ -63,16 +63,21 @@ A su vez, como extra, se diseñaron más apartados en la web con diferentes func
 
 Y otrás cosas más que se explican más adelante.
 
+<div align="center">
+
 ### Built With
 
-- <img src="ReadMe\html.ico" width="18" height="18"> HTML
-- <img src="ReadMe\html.ico" width="18" height="18"> CSS
-- <img src="ReadMe\html.ico" width="18" height="18"> JavaScript
+<img src="ReadMe\build.png" height="80">
+<img src="ReadMe\bootstrap.png" height="80">
+
 
 ### Otras tecnologías
 
-- <img src="ReadMe\html.ico" width="18" height="18"> Git
-- <img src="ReadMe\html.ico" width="18" height="18"> GitHub
+<img src="ReadMe\github.png" height="80">
+<img src="ReadMe\git.png" height="80">
+</div>
+
+
 
 ---
 
