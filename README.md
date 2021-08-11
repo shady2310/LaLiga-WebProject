@@ -95,8 +95,8 @@ Cuando entras por primera vez a la web te encuentras con la página de bienvenid
 
 Aquí podemos encontrar toda la información sobre los partidos y la clasificación de cada uno de los equipos en la competición.
 <div align="center">
-<img src="ReadMe\partidos.png" height="250">
-<img src="ReadMe\clasificacion.png" height="250">
+<img src="ReadMe\partidos.png" height="190">
+<img src="ReadMe\clasificacion.png" height="190">
 </div>
 
 
