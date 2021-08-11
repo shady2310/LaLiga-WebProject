@@ -7,7 +7,6 @@ const minutosEL = document.getElementById("minutos");
 const segundosEL = document.getElementById("segundos");
 
 const fecha = "13 Aug 2021";
-// const fecha = "10 Aug 2021";
 
 function cuentaAtras() {
   const fechaInicio = new Date(fecha);
@@ -35,7 +34,3 @@ function cuentaAtras() {
 function dosdigitos(time) {
   return time < 10 ? `0${time}` : time;
 }
-// cuentaAtras();
-  
-
-// FIN CUENTA ATRAS

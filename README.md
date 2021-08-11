@@ -152,6 +152,53 @@ Por último tenemos la tabla de estadisticas, en ella podemos encontrar listados
 
 ## Descripción técnica
 
+### Home Page:
+
+En la página de inicio tenemos un contador que se encarga de indicar el tiempo que queda para el inicio de LaLiga, está pensado para que se le asigne la fecha de inicio y al llegar a la misma ocultarse automaticamente y detener su ejecución:
+
+```js
+let intervalo = setInterval(cuentaAtras, 1000); // Se establece un intervalo de ejecución de la función cada segundo para actulizar el contador
+
+//Llamamos a todos los elementos del DOM que forman parte del contador
+let ocultarContador = document.getElementById("cuenta__contenedor");
+const diasEL = document.getElementById("dias");
+const horasEL = document.getElementById("horas");
+const minutosEL = document.getElementById("minutos");
+const segundosEL = document.getElementById("segundos");
+
+// Establecemos la fecha de fin del contador o fecha de inicio del evento (LaLiga en este caso)
+const fecha = "13 Aug 2021";
+
+function cuentaAtras() {
+  const fechaInicio = new Date(fecha); // Tomamos la fecha indicada
+  const fechaActual = new Date(); // Obtenemos la fecha actual
+
+  //Obetenemos cada uno de los datos haciendo una operación matematica y lo redondeamos al mínimo número redondo con el "Math.floor"
+  const totalSegundos = (fechaInicio - fechaActual) / 1000;
+  const dias = Math.floor(totalSegundos / 3600 / 24);
+  const horas = Math.floor(totalSegundos / 3600) % 24;
+  const minutos = Math.floor(totalSegundos / 60) % 60;
+  const segundos = Math.floor(totalSegundos) % 60;
+
+  diasEL.innerHTML = dias;
+  horasEL.innerHTML = dosdigitos(horas);
+  minutosEL.innerHTML = dosdigitos(minutos);
+  segundosEL.innerHTML = dosdigitos(segundos);
+
+  if (fechaInicio <= fechaActual) {
+    console.log(`La Liga ya ha empezado!`);
+    clearInterval(intervalo);
+    ocultarContador.style.display = "none";
+  }
+}
+// Para tener un aspecto uniforme con todos los digitos añadimos un cero si el numero es menor que 10
+function dosdigitos(time) {
+  return time < 10 ? `0${time}` : time;
+}
+```
+
+<br>
+
 ### Obtención de datos:
 
 Para obtener los datos en tiempo real hacemos uso de una **API**.
@@ -161,32 +208,47 @@ Documentación de la **API** utilizada: [Documentación](https://www.football-da
 Para comunicarnos con la **API** utilizamos un fetch dentro de una función async (asíncrona).
 
 - Fetch
+
   ```js
   async function datos() {
     const url = "https://api.football-data.org/v2/competitions/2014/matches";
     const token = "XXXXX"; // Token privado proporcionado por la API
     const header = {
-      method: "GET",
+      method: "GET", // Utilizamos el método GET para la obtección de los datos
       headers: {
-        "X-Auth-Token": token,
+        "X-Auth-Token": token, // Añadimos el token
       },
     };
-    const response = await fetch(url, header);
-    const data = await response.json();
-    FuncionEjemplo(data); // Aquí ejecutamos cada una de las funciones que utilizamos en el código.
+    const response = await fetch(url, header); // Esperamos la respuesta del Fetch con un "Await"
+
+    const data = await response.json(); // Recibimos los datos en formato ".json"
+
+    FuncionEjemplo(data); // Aquí ejecutamos cada una de las funciones que utilizamos en el código
   }
   ```
 
-### Installation
+### Proceso de carga de los datos
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
+Al recibir los datos mediante el fetch debido a que hacemos una llamada a una API externa añadimos un **Spinner** que se ejecuta cuando hacemos la llamada y termina su ejecución al recibir los datos. Está separado en dos funciones, una que se encarga de crear el Spinner y otra eliminarlo.
+
+- Código del Spinner
+
+  ```js
+  // Mostramos el Spinner
+  function loader() {
+    let loader = document.getElementById("contenedor__loader");
+    loader.style.visibility = "block";
+  }
+  // Ocultamos el Spinner
+  function borrarLoader() {
+    let loader = document.getElementById("contenedor__loader");
+    loader.style.visibility = "hidden";
+  }
+  ```
+
+  <div align="center">
+  <img src="ReadMe\spinner.png" height="250">
+  </div>
 
 ---
 
