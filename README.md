@@ -202,7 +202,7 @@ function dosdigitos(time) {
 
 ### Obtención de datos:
 
-Para obtener los datos en tiempo real hacemos uso de una **API**. 
+Para obtener los datos en tiempo real hacemos uso de una **API**.
 
 En cada tabla usamos el **Fetch** para la obtención de los datos.
 
@@ -367,19 +367,99 @@ En está tabla por defecto tenemos listados todos los equipos (20), podemos list
 2. Posteriormente asigamos los datos obtenidos a las varibles que que luego utilizaremos para crear bucles con **".forEach()"**.
 3. Por último hacemos una conexión con los "elementos padres" y usamos **".appendChild()"** para la creación del **HTML**.
 
+- Ejemplo de la tabla de Clasificación:
+
+  ```js
+  function tablaClasificacion(arrayclasificacion) {
+    let tbody__clasificacion = document.getElementById("tbody__clasificacion"); // Ubicación en el DOM donde se va crear la tabla
+
+    // Recorrido por todo el Array y buscando cada uno de los datos que nos interesan
+    for (let i = 0; i < arrayclasificacion.length; i++) {
+      const tr = document.createElement("tr");
+
+      let posicion = arrayclasificacion[i].position;
+
+      let equipo = arrayclasificacion[i].team.name;
+
+      let img = document.createElement("img");
+      img.src = arrayclasificacion[i].team.crestUrl;
+
+      tr.appendChild(img);
+      img.classList.add("img");
+
+      let puntos = arrayclasificacion[i].points;
+
+      let pj = arrayclasificacion[i].playedGames;
+
+      let pg = arrayclasificacion[i].won;
+
+      let pe = arrayclasificacion[i].draw;
+
+      let pp = arrayclasificacion[i].lost;
+
+      let datosClasificacion = [posicion, img, equipo, puntos, pj, pg, pe, pp];
+
+      datosClasificacion.forEach((elemento) => {
+        const td = document.createElement("td");
+        td.append(elemento);
+        tr.appendChild(td);
+        tbody__clasificacion.appendChild(tr);
+      });
+    }
+  }
+  ```
+<br>
+
 ---
 
+## Wireframes
+
+Respecto al diseño se realizó una aproximación del diseño deseado. El diseño final es un poco diferente debido a las modificaciones y requisitos posteriores que se le asignaron al proyecto:
+
+<div align="center">
+<img src="ReadMe\wireframes\inicio.png" height="190">
+<img src="ReadMe\wireframes\partidos.png" height="190">
+</div>
+
+<br>
+
+<div align="center">
+<img src="ReadMe\wireframes\clasificación.png" height="190">
+<img src="ReadMe\wireframes\noticias.png" height="190">
+</div>
+
+<br>
+
+<div align="center">
+<img src="ReadMe\wireframes\vídeos.png" height="190">
+<img src="ReadMe\wireframes\fotogalerías.png" height="190">
+</div>
+
+<br>
+
+La idea es seguir desarrollando la web para integrar el aspecto deseado o pensado previante en los wireframes para conseguir el resultado final.
+
+<br>
+
+---
+
+<br>
 <!-- ROADMAP -->
 
 ## Roadmap
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+Consulta las [Issues](https://github.com/shady2310/LaLiga-WebProject/issues) para obtener una lista de las funciones propuestas (y problemas conocidos).
 
-<!-- CONTRIBUTING -->
+<br>
 
-## Contributing
+---
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+<br>
+<!-- Contribuir -->
+
+## Contribuir
+
+Las contribuciones son lo que hacen que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es **muy apreciada**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -387,10 +467,26 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+<br>
+
+---
+
+<br>
+<!-- TO DO -->
+
+## TO DO
+
+- Trabajar en la mejora del responsive.
+- Añadir ligas extranjeras.
+- Terminar la sección de noticias, opción de añadir si es posible una API de noticias deportivas.
+
+<br>
+
+---
+
+<br>
 <!-- Versiones -->
 
 ## Versiones
 
-- []()
-- []()
-- []()
+- v1.0
