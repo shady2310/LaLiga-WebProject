@@ -51,11 +51,11 @@
 
 **Descripción del proyecto:**
 
-El proyecto consistia en desarrollar una Web en la que poder consultar los datos de los partidos, clasificación y estadisticas de La Liga Santander.
+El proyecto consistía en desarrollar una Web en la que poder consultar los datos de los partidos, clasificación y estadísticas de La Liga Santander.
 
 A su vez, como extra, se diseñaron más apartados en la web con diferentes funcionalidades, como filtros a las tablas y otras instancias de navegación, como las noticias, la Landing Page, zona de vídeos y fotogalerías.
 
-Y otrás cosas más que se explican más adelante.
+Y otras cosas más que se explican más adelante.
 
 <div align="center">
 
@@ -85,7 +85,7 @@ Y otrás cosas más que se explican más adelante.
 
 **Página principal**
 
-Cuando entras por primera vez a la web te encuentras con la página de bienvenida, en la cual en caso de que LaLiga no haya comenzado te mostrará un contador para el inicio de la misma, en caso contrario el contador desaparecerá automaticamente.
+Cuando entras por primera vez a la web te encuentras con la página de bienvenida, en la cual en caso de que LaLiga no haya comenzado te mostrará un contador para el inicio de la misma, en caso contrario el contador desaparecerá automáticamente.
 
 <div align="center">
 <img src="ReadMe\index.png" height="250">
@@ -99,7 +99,7 @@ Cuando entras por primera vez a la web te encuentras con la página de bienvenid
 
 **Partidos y clasificación:**
 
-Aquí podemos encontrar toda la información sobre los partidos y la clasificación de cada uno de los equipos en la competición. Además encontraremos varios filtros que nos permiten hacer una busqueda más precisa y comoda del equipo que más nos interese.
+Aquí podemos encontrar toda la información sobre los partidos y la clasificación de cada uno de los equipos en la competición. Además encontraremos varios filtros que nos permiten hacer una búsqueda más precisa y cómoda del equipo que más nos interese.
 
 <div align="center">
 <img src="ReadMe\partidos.png" height="190">
@@ -126,7 +126,7 @@ Aquí podemos encontrar una diferente variedad de vídeos relacionados con la co
 
 **Fotogalerías:**
 
-Aquí encontramos diferentes galerías publicadas por temas, dentro de cada una podemos encontrar un carrusel con las imagenes descritas en cada uno de los titulos.
+Aquí encontramos diferentes galerías publicadas por temas, dentro de cada una podemos encontrar un carrusel con las imágenes descritas en cada uno de los títulos.
 
 <div align="center">
 <img src="ReadMe\fotogaleria.png" height="190">
@@ -137,7 +137,7 @@ Aquí encontramos diferentes galerías publicadas por temas, dentro de cada una 
 
 **Estadisticas:**
 
-Por último tenemos la tabla de estadisticas, en ella podemos encontrar listados los 20 equipos que participan en LaLiga Santander. Además contamos con información relevante al rendimiento de los equipos en la tabla.
+Por último tenemos la tabla de estadísticas, en ella podemos encontrar listados los 20 equipos que participan en LaLiga Santander. Además contamos con información relevante al rendimiento de los equipos en la tabla.
 
 <div align="center">
 <img src="ReadMe\estadisticas.png" height="250">
@@ -153,7 +153,7 @@ Por último tenemos la tabla de estadisticas, en ella podemos encontrar listados
 
 ### Home Page:
 
-En la página de inicio tenemos un contador que se encarga de indicar el tiempo que queda para el inicio de LaLiga, está pensado para que se le asigne la fecha de inicio y al llegar a la misma ocultarse automaticamente y detener su ejecución:
+En la página de inicio tenemos un contador que se encarga de indicar el tiempo que queda para el inicio de LaLiga, está pensado para que se le asigne la fecha de inicio y al llegar a la misma ocultarse automáticamente y detener su ejecución:
 
 ```js
 let intervalo = setInterval(cuentaAtras, 1000); // Se establece un intervalo de ejecución de la función cada segundo para actulizar el contador
@@ -254,7 +254,7 @@ Al recibir los datos mediante el fetch debido a que hacemos una llamada a una AP
 
 ### Filtros
 
-Contamos con diferentes filtros, en la tabla de resultados y en la tabla de estadisticas.
+Contamos con diferentes filtros, en la tabla de resultados y en la tabla de estadísticas.
 
 #### Filtros de la tabla resultados:
 
@@ -325,7 +325,7 @@ Aquí tenemos la posibilidad de filtrar por el nombre de cada equipo y por las j
 
 #### Filtros de la tabla de estadisticas:
 
-En está tabla por defecto tenemos listados todos los equipos (20), podemos listar gracias a unos botones los primeros 5 equipos (los 5 equipos con mejores estadisticas) y contamos con otro botón para volver a listar los 20 equipos para que no sea necesario recargar la página.
+En esta tabla por defecto tenemos listados todos los equipos (20), podemos listar gracias a unos botones los primeros 5 equipos (los 5 equipos con mejores estadísticas) y contamos con otro botón para volver a listar los 20 equipos para que no sea necesario recargar la página.
 
 <div align="center">
   <img src="ReadMe\filtros-estadisticas.png" height="47">
@@ -362,8 +362,8 @@ En está tabla por defecto tenemos listados todos los equipos (20), podemos list
 
 ### Creación de las tablas con los datos
 
-1. Creamos los elementos del **HTML** de manera dinamica con **JavaScript**.
-2. Posteriormente asigamos los datos obtenidos a las varibles que que luego utilizaremos para crear bucles con **".forEach()"**.
+1. Creamos los elementos del **HTML** de manera dinámica con **JavaScript**.
+2. Posteriormente asignamos los datos obtenidos a las variables que luego utilizaremos para crear bucles con **".forEach()"**.
 3. Por último hacemos una conexión con los "elementos padres" y usamos **".appendChild()"** para la creación del **HTML**.
 
 - Ejemplo de la tabla de Clasificación:
@@ -436,7 +436,7 @@ Respecto al diseño se realizó una aproximación del diseño deseado. El diseñ
 
 <br>
 
-La idea es seguir desarrollando la web para integrar el aspecto deseado o pensado previante en los wireframes para conseguir el resultado final.
+La idea es seguir desarrollando la web para integrar el aspecto deseado o pensado previamente en los wireframes para conseguir el resultado final.
 
 <br>
 
