@@ -49,37 +49,35 @@ function tablaPartidos(partidos) {
 
   tbody__partidos.innerHTML = "";
 
-  for (let i = 0; i < partidos.length; i++) {
+  partidos.forEach((datos) => {
     const tr = document.createElement("tr");
 
-    let fechaPartidos = new Date(partidos[i].utcDate);
+    let fechaPartidos = new Date(datos.utcDate);
     let fechaClean = fechaPartidos.toLocaleDateString();
     let hora = fechaPartidos.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
     });
 
-    let equipoLocal = partidos[i].homeTeam.name;
-    let equipoVisitante = partidos[i].awayTeam.name;
+    let equipoLocal = datos.homeTeam.name;
+    let equipoVisitante = datos.awayTeam.name;
 
     let imgEL = document.createElement("img");
     imgEL.src =
-      "https://crests.football-data.org/" + partidos[i].homeTeam.id + ".svg";
+      "https://crests.football-data.org/" + datos.homeTeam.id + ".svg";
 
     let imgEV = document.createElement("img");
     imgEV.src =
-      "https://crests.football-data.org/" + partidos[i].awayTeam.id + ".svg";
+      "https://crests.football-data.org/" + datos.awayTeam.id + ".svg";
     imgEL.classList.add("img");
     imgEV.classList.add("img2");
 
     let resultado =
-      partidos[i].score.fullTime.homeTeam +
-      "-" +
-      partidos[i].score.fullTime.awayTeam;
+      datos.score.fullTime.homeTeam + "-" + datos.score.fullTime.awayTeam;
 
-    let jornada = partidos[i].matchday;
+    let jornada = datos.matchday;
 
-    let arbitro = partidos[i].referees[1].name;
+    let arbitro = datos.referees[1].name;
 
     let datosPartidos = [
       jornada,
@@ -99,7 +97,7 @@ function tablaPartidos(partidos) {
       tr.appendChild(td);
       tbody__partidos.appendChild(tr);
     });
-  }
+  });
 }
 
 function busqueda(partidos) {

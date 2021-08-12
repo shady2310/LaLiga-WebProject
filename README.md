@@ -488,4 +488,6 @@ Las contribuciones son lo que hacen que la comunidad de código abierto sea un l
 
 ## Versiones
 
-- v1.0
+- v1.0 (Release) (10/08/2021)
+- v1.1 (Solución error en el bucle del contador, había bucle infinito) (11/08/2021)
+- v1.2 (Cambios de bucle FOR por forEach() en los casos posibles) (12/08/2021)
