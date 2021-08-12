@@ -33,19 +33,13 @@
         <li><a href="#otras-tecnologías">Otras tecnologías</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#descripción-técnica">Descripción técnica</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#descripción-funcional">Descripción funcional</a></li>
+    <li><a href="#descripción-técnica">Descripción técnica</a></li>
+    <li><a href="#wireframes">Wireframes</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#contribuir">Contribuir</a></li>
+    <li><a href="#to-do">To Do</a></li>
+    <li><a href="#versiones">Versiones</a></li>
   </ol>
 </details>
 
