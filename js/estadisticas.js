@@ -29,46 +29,61 @@ function tablaEstadisticas(partidos) {
 
     let equipoLocal = partidos[i].homeTeam.name;
     let equipoLocalId = partidos[i].homeTeam.id;
-    let equipoLocalGoles = 0;
+    let equipoLocalGoles = partidos[i].score.fullTime.homeTeam;
+    
+    let equipoVisitante = partidos[i].awayTeam.name;
+    let equipoVisitanteId = partidos[i].awayTeam.id;
+    let equipoVisitanteGoles = partidos[i].score.fullTime.awayTeam;
 
-    let incluido = false;
+    let equipoLocalEncontrado;
 
-    datosEstadisticas.forEach((equipoLocalEncontrado) => {
-      if (equipoLocalEncontrado.id == equipoLocalId) {
-        incluido = true;
+    datosEstadisticas.forEach((localEncontrado) =>{
+      if(localEncontrado.id === equipoLocalId){
+        equipoLocalEncontrado = localEncontrado;
       }
-    });
-    if (incluido == false) {
+    })
+
+    if(!equipoLocalEncontrado){
       datosEstadisticas.push({
         id: equipoLocalId,
         name: equipoLocal,
         goals: equipoLocalGoles,
-        matches: 0,
-        avg: 0,
-      });
+        matches: 1,
+      })
+    }else {
+      equipoLocalEncontrado.goals += equipoLocalGoles;
+      equipoLocalEncontrado.matches++
     }
-  }
 
-  for (i = 0; i < datosEstadisticas.length; i++) {
-    for (j = 0; j < partidos.length; j++) {
-      if (datosEstadisticas[i].id == partidos[j].homeTeam.id) {
-        datosEstadisticas[i].goals += partidos[j].score.fullTime.homeTeam;
-        datosEstadisticas[i].matches++;
-      } else if (datosEstadisticas[i].id == partidos[j].awayTeam.id) {
-        datosEstadisticas[i].goals += partidos[j].score.fullTime.awayTeam;
-        datosEstadisticas[i].matches++;
+    let equipoVisitanteEncontrado;
+
+    datosEstadisticas.forEach((visitanteEncontrado) =>{
+      if(visitanteEncontrado.id === equipoVisitanteId){
+        equipoVisitanteEncontrado = visitanteEncontrado;
       }
+    })
+
+    if(!equipoVisitanteEncontrado){
+      datosEstadisticas.push({
+        id: equipoVisitanteId,
+        name: equipoVisitante,
+        goals: equipoVisitanteGoles,
+        matches: 1,
+      })
+    }else {
+      equipoVisitanteEncontrado.goals += equipoVisitanteGoles;
+      equipoVisitanteEncontrado.matches++
     }
+
   }
 
-  datosEstadisticas.forEach((media) => {
-    let avg = media.goals / media.matches;
-    let avgObj = {
-      avg: avg.toFixed(2),
-    };
-    Object.assign(media, avgObj);
-    datosEstadisticas.sort((a, b) => b.avg - a.avg);
-  });
+  for(let i = 0; i < datosEstadisticas.length; i++){
+    let mediaGoles = datosEstadisticas[i].goals / datosEstadisticas[i].matches;
+    datosEstadisticas[i].avg = mediaGoles;
+  }
+
+  datosEstadisticas.sort((a, b) => b.avg - a.avg);
+
 
   function crearTablaEstadisticas(partidos) {
     let tbody__estadisticas = document.getElementById("tbody__estadisticas");
@@ -85,7 +100,7 @@ function tablaEstadisticas(partidos) {
         elementos.name,
         elementos.goals,
         elementos.matches,
-        elementos.avg,
+        elementos.avg.toFixed(2),
       ];
 
       datosPartidos.forEach((elemento) => {

@@ -4,11 +4,11 @@ let buscaJornada = document.getElementById("buscaJornada");
 let mostrarTodasJornadas = document.getElementById("todasJornadas");
 
 datos();
+// "https://api.football-data.org/v2/competitions/2014/matches?season=2020";
 
 async function datos() {
   loader();
-  const url =
-    "https://api.football-data.org/v2/competitions/2014/matches?season=2020";
+  const url = "https://api.football-data.org/v2/competitions/2014/matches";
   const token = "91401ee930a240caa286d2d4f8677a67";
   const header = {
     method: "GET",
@@ -18,7 +18,7 @@ async function datos() {
   };
   const response = await fetch(url, header);
   const data = await response.json();
-
+  
   borrarLoader();
 
   tablaPartidos(data.matches);
@@ -75,9 +75,15 @@ function tablaPartidos(partidos) {
     let resultado =
       datos.score.fullTime.homeTeam + "-" + datos.score.fullTime.awayTeam;
 
+
+    if(resultado === "null-null"){
+      resultado = "Vs";
+      // console.log(hola);
+    }
+
     let jornada = datos.matchday;
 
-    let arbitro = datos.referees[1].name;
+    let arbitro = datos.referees[3].name;
 
     let datosPartidos = [
       jornada,
